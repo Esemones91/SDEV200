@@ -1,0 +1,21 @@
+Filename    ItemPlan
+Author      Erick Semones
+This file outlines the Item.java class including
+its attributes and methods.
+
+
+
+Item.java represents an invdividual item in an
+inventory. 
+
+ATTRIBUTES 
+ = String name  // The name of the item 
+ - String category  // The item's category
+ = int quantity  // The item's current stock level 
+ - int reorderLevel  // The threshhold that indicates when it is time to reorder 
+ - double price  // The item's price
+
+METHODS 
+ - Constructor  // This will initialize the item 
+ - Getters & Setters  // One for reach attribute 
+ - toString()  // This will provide a string representation of the item for easy display

@@ -1,0 +1,19 @@
+Filename    InventoryPlan
+Author      Erick Semones
+This file outlines the Inventory.java class including
+its attributes and methods.
+
+
+
+Inventory.java 
+This class maintains a collection of Item objects.
+
+ATTRIBUTES
+ - ArrayList<Item> items  // A list to store the inventory's items.
+
+METHODS 
+ - addItem(Item item)  // This adds an item to the inventory 
+ - updateItem(Item item)  // This updates the item list in the inventory 
+ - deleteItem(Item item)  // This deletes items from the item list 
+ - getItem()  // Retrieves the item list 
+ - getLowStockItem  // Checks which items are below their restock level 
