@@ -1,0 +1,3 @@
+ID: 001, Name: Erick Semones, GPA: 4.0
+ID: 002, Name: Bobby Partridge, GPA: 3.8
+ID: Byron, Name: Partridge Partridge, GPA: 2.3
