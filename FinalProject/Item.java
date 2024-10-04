@@ -1,27 +1,22 @@
 // Filename Item
 // Asgnmnt  Final Project
 // Author   Erick Semones
-// Date     9-7-2024
-/* The Item class represents a single item in an
- * inventory list. It includes attributes: name,
- * category, quantity, reorder level, and price. 
- * It also contains a constructor, getter and
- * setter methods for each attribute, and a 
- * toString() method to fetch a string 
- * representation for easy display.*/
+// Date     9-7-2024 (10-2-2024)
+
+/* allows for Item object instantiation in Inventory class.
+it includes fields, constructor, accessors, and
+methods for interacting with other classes..*/
 
 
 
  public class Item
  {
-    private String name;
-    private String category;
-    private int quantity;
-    private int reorderLvl;
+    private String name, category;
+    private int quantity, reorderLvl;
     private double price;
 
-    // Item Constructor
-    public Item(String name, String category, int quantity, int reorderLvl, double price)
+    // constructor
+    public Item(String name, String category, int quantity, double price, int reorderLvl)
     {
         this.name = name;
         this.category = category;
@@ -30,68 +25,55 @@
         this.price = price;
     }
 
-    // Getters
-    
-    // Get Name Method
-    // This method returns the value of name
+    // return the value of name
     public String getName()
     {
         return name;
     }
     
-    // Get Category
-    // Thie method returns the value of category
+    // return the value of category
     public String getCategory()
     {
         return category;
     }
     
-    // Get Quantity Method
-    // This method returns the value of quantity
+    // return the value of quantity
     public int getQuantity()
     {
         return quantity;
     }
     
-    // Get Reorder Level Method
-    // This method returns the value of reorderLvl
+    // return the value of reorderLvl
     public int getReorderLvl()
     {
         return reorderLvl;
     }
     
-    // Get Price Method
-    // This method returns the value of price
+    // return the value of price
     public double getPrice()
     {
         return price;
     }
 
-    // Setters
-    
-    // Set Quanitty Method
-    // This method sets the value for quantity
+    // set the value for quantity
     public void setQuantity(int quantity)
     {
         this.quantity = quantity;
     }
     
-    // Set Reorder Level Method
-    // This method sets teh value for reorderLvl
+    // set the value for reorderLvl
     public void setReorderLvl(int reorderLvl)
     {
         this.reorderLvl = reorderLvl;
     }
     
-    // Set Price Method
-    // This method sets the value for price
+    // set the value for price
     public void setPrice(double price)
     {
         this.price = price;
     }
 
-    // ToString Method
-    // This method retrieves a string representation of the Item class for display
+    // retrieve a string representation of the Item class for display
     @Override 
     public String toString()
     {

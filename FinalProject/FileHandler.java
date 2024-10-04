@@ -3,13 +3,14 @@
 // Written by Erick Semones
 // Written on 9-15-2024
 
-/* The FileHandler class operates the file input/output functions
- * like saving and loading inventory data. It also performs 
- * exception handling so that the overall program can catch
- * exceptions with minimal disruptions. */
+/* operates the file input/output functions like saving and 
+loading inventory data. It also performs exception handling 
+so that the overall program can catch exceptions with minimal 
+disruptions. */
 
 import java.io.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
  
 public class FileHandler 
 {
@@ -25,15 +26,17 @@ public class FileHandler
                 writer.write(item.getName() + "," + 
                             item.getCategory() + "," + 
                             item.getQuantity() + "," +
-                            item.getReorderLvl() + "," +
-                            item.getPrice());
+                            item.getPrice() + "," +
+                            item.getReorderLvl());
+                            
                  
-                            writer.newLine();
+                writer.newLine();
             }
         } 
         catch (IOException e) 
         {
-            System.out.println("Error saving inventory data: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, 
+                "Error saving inventory data: " + e.getMessage());
         }
     }
  
@@ -46,7 +49,8 @@ public class FileHandler
         {
             String line;
             
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) 
+            {
                 String[] parts = line.split(",");
                 
                 if (parts.length == 5) 
@@ -54,24 +58,28 @@ public class FileHandler
                     String name = parts[0];
                     String category = parts[1];
                     int quantity = Integer.parseInt(parts[2]);
-                    int reorderLvl = Integer.parseInt(parts[3]);
-                    double price = Double.parseDouble(parts[4]);
+                    double price = Double.parseDouble(parts[3]);
+                    int reorderLvl = Integer.parseInt(parts[4]);
+                    
  
-                    inventory.add(new Item(name, category, quantity, reorderLvl, price));
+                    inventory.add(new Item(name, category, quantity, price, reorderLvl));
                 }
             }
         } 
         catch (FileNotFoundException e) 
         {
-            System.out.println("Inventory file not found: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, 
+                "Inventory file not found: " + e.getMessage());
         } 
         catch (IOException e) 
         {
-            System.out.println("Error reading inventory data: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, 
+                "Error reading inventory data: " + e.getMessage());
         } 
         catch (NumberFormatException e) 
         {
-            System.out.println("Error parsing inventory data: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, 
+                "Error parsing inventory data: " + e.getMessage());
         }
  
         return inventory;
